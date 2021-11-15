@@ -8,6 +8,9 @@ class CharacterResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :movies,
+             resource: MovieResource
+
   # Indirect associations
 
 end

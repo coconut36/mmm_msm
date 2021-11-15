@@ -11,6 +11,9 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :characters,
+             foreign_key: :movies_id
+
   # Indirect associations
 
 end
