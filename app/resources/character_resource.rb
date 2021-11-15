@@ -8,6 +8,9 @@ class CharacterResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :actor,
+             foreign_key: :actors_id
+
   belongs_to :movies,
              resource: MovieResource
 
