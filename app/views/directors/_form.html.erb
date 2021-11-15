@@ -1,0 +1,109 @@
+<% was_validated = director.errors.any? %>
+
+<%= form_with(model: director, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for dir_name start -->
+  <div class="form-group">
+    <% dir_name_class = "form-control" %>
+    <% dir_name_was_invalid = director.errors.include?(:dir_name) %>
+
+    <% if was_validated %>
+      <% if dir_name_was_invalid %>
+        <% dir_name_class << " is-invalid" %>
+      <% else %>
+        <% dir_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dir_name %>
+    <!-- Input for dir_name start -->
+    <%= f.text_field :dir_name, class: dir_name_class, placeholder: "Enter dir name" %>
+    <!-- Input for dir_name end -->
+    <% if dir_name_was_invalid %>
+      <% director.errors.full_messages_for(:dir_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dir_name end -->
+  <!-- Label and input for dir_dob start -->
+  <div class="form-group">
+    <% dir_dob_class = "form-control" %>
+    <% dir_dob_was_invalid = director.errors.include?(:dir_dob) %>
+
+    <% if was_validated %>
+      <% if dir_dob_was_invalid %>
+        <% dir_dob_class << " is-invalid" %>
+      <% else %>
+        <% dir_dob_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dir_dob %>
+    <!-- Input for dir_dob start -->
+    <%= f.date_select :dir_dob, class: dir_dob_class, placeholder: "Enter dir dob" %>
+    <!-- Input for dir_dob end -->
+    <% if dir_dob_was_invalid %>
+      <% director.errors.full_messages_for(:dir_dob).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dir_dob end -->
+  <!-- Label and input for dir_bio start -->
+  <div class="form-group">
+    <% dir_bio_class = "form-control" %>
+    <% dir_bio_was_invalid = director.errors.include?(:dir_bio) %>
+
+    <% if was_validated %>
+      <% if dir_bio_was_invalid %>
+        <% dir_bio_class << " is-invalid" %>
+      <% else %>
+        <% dir_bio_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dir_bio %>
+    <!-- Input for dir_bio start -->
+    <%= f.text_area :dir_bio, class: dir_bio_class, placeholder: "Enter dir bio" %>
+    <!-- Input for dir_bio end -->
+    <% if dir_bio_was_invalid %>
+      <% director.errors.full_messages_for(:dir_bio).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dir_bio end -->
+  <!-- Label and input for dir_image start -->
+  <div class="form-group">
+    <% dir_image_class = "form-control" %>
+    <% dir_image_was_invalid = director.errors.include?(:dir_image) %>
+
+    <% if was_validated %>
+      <% if dir_image_was_invalid %>
+        <% dir_image_class << " is-invalid" %>
+      <% else %>
+        <% dir_image_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dir_image %>
+    <!-- Input for dir_image start -->
+    <%= f.text_field :dir_image, class: dir_image_class, placeholder: "Enter dir image" %>
+    <!-- Input for dir_image end -->
+    <% if dir_image_was_invalid %>
+      <% director.errors.full_messages_for(:dir_image).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dir_image end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

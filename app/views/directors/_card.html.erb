@@ -1,0 +1,56 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Director #<%= director.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Dir name</dt>
+      <!-- Display dir_name start -->
+      <dd><%= director.dir_name %></dd>
+      <!-- Display dir_name end -->
+
+      <dt>Dir dob</dt>
+      <!-- Display dir_dob start -->
+      <dd><%= director.dir_dob %></dd>
+      <!-- Display dir_dob end -->
+
+      <dt>Dir bio</dt>
+      <!-- Display dir_bio start -->
+      <dd><%= director.dir_bio %></dd>
+      <!-- Display dir_bio end -->
+
+      <dt>Dir image</dt>
+      <!-- Display dir_image start -->
+      <dd><%= director.dir_image %></dd>
+      <!-- Display dir_image end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back director, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link director start -->
+      <div class="col">
+        <%= link_to edit_director_url(director), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link director end -->
+
+      <!-- Delete link director start -->
+      <div class="col">
+        <%= link_to director, method: :delete, data: { confirm: "Do you really want to delete this director?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link director end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(director.updated_at) %> ago
+  </div>
+</div>
