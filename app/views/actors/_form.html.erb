@@ -94,7 +94,7 @@
 
     <%= f.label :act_image %>
     <!-- Input for act_image start -->
-    <%= f.text_field :act_image, class: act_image_class, placeholder: "Enter act image" %>
+    <%= f.file_field :act_image, class: "form-control" %>
     <!-- Input for act_image end -->
     <% if act_image_was_invalid %>
       <% actor.errors.full_messages_for(:act_image).each do |message| %>

@@ -94,7 +94,7 @@
 
     <%= f.label :dir_image %>
     <!-- Input for dir_image start -->
-    <%= f.text_field :dir_image, class: dir_image_class, placeholder: "Enter dir image" %>
+    <%= f.file_field :dir_image, class: "form-control" %>
     <!-- Input for dir_image end -->
     <% if dir_image_was_invalid %>
       <% director.errors.full_messages_for(:dir_image).each do |message| %>

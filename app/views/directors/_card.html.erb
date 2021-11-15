@@ -22,7 +22,9 @@
 
       <dt>Dir image</dt>
       <!-- Display dir_image start -->
-      <dd><%= director.dir_image %></dd>
+      <dd>
+        <%= cl_image_tag @director.dir_image, class: "img-fluid" %>
+      </dd>
       <!-- Display dir_image end -->
 
     </dl>
