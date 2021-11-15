@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
-    scope module: 'api/v1', as: 'api' do
+  scope path: ApplicationResource.endpoint_namespace,
+        defaults: { format: :jsonapi } do
+    scope module: "api/v1", as: "api" do
       resources :characters
 
       resources :bookmarks
@@ -14,13 +15,12 @@ Rails.application.routes.draw do
       resources :users
 
       resources :movies
-
     end
-    mount VandalUi::Engine, at: '/vandal'
+    mount VandalUi::Engine, at: "/vandal"
     # your routes go here
   end
   ActiveAdmin.routes(self)
-  root :to => "movies#index"
+  root to: "movies#index"
   resources :characters
   resources :bookmarks
   resources :actors

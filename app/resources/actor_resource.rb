@@ -16,5 +16,4 @@ class ActorResource < ApplicationResource
 
   many_to_many :filmographies,
                resource: MovieResource
-
 end

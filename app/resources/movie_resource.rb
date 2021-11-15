@@ -24,5 +24,4 @@ class MovieResource < ApplicationResource
 
   many_to_many :casts,
                resource: ActorResource
-
 end

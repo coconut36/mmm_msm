@@ -12,5 +12,4 @@ class ReviewResource < ApplicationResource
   belongs_to :movie
 
   # Indirect associations
-
 end

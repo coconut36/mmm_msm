@@ -2,10 +2,10 @@ class Character < ApplicationRecord
   # Direct associations
 
   belongs_to :actor,
-             :foreign_key => "actors_id"
+             foreign_key: "actors_id"
 
   belongs_to :movies,
-             :class_name => "Movie"
+             class_name: "Movie"
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class Character < ApplicationRecord
   def to_s
     name
   end
-
 end

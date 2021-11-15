@@ -15,5 +15,4 @@ class CharacterResource < ApplicationResource
              resource: MovieResource
 
   # Indirect associations
-
 end
