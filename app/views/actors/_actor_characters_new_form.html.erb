@@ -23,7 +23,7 @@
     <%= f.label :movies_id %>
 
     <!-- Input for movies_id start -->
-    <%= f.text_field :movies_id, class: "form-control" %>
+    <%= f.collection_select :movies_id, Movie.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for movies_id end -->
   </div>
   <!-- Label and input for movies_id end -->
